@@ -6,6 +6,7 @@ import CoffeeList from './components/CoffeeList'
 import  NewCoffee  from './components/NewCoffee'
 import { CoffeeProvider } from './contexts/CoffeeProvider';
 import { UserProvider } from './contexts/UserProvider';
+import './App.css';
 
 function App() {
   return (
