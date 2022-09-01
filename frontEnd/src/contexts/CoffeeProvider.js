@@ -23,7 +23,16 @@ export const CoffeeProvider = (props) => {
     }
 
     function addCoffee(coffee) {        
-
+        let myHeaders = {
+            Authorization: `Bearer ${localStorage.getItem('myCoffeeToken')}`
+        };
+    
+        return axios.post(baseUrl, coffee, { headers: myHeaders })
+            .then(response => {
+                getAllCoffee();
+                return new Promise(resolve => resolve(response.data));
+            }
+        );
     }
 
     function editCoffee(coffee) {
